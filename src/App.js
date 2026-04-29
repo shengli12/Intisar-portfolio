@@ -35,11 +35,11 @@ const cards = [
 
 const timeline = [
   {year:"2021–2025",title:"BSc Computer Engineering",desc:"Built strong foundations in programming, ML, databases, algorithms and backend systems at Örebro University.",side:"right"},
-  {year:"2022–2025",title:"Sales Associate & Data Support @ IKEA",desc:"Built Power BI dashboards for store management and analysed sales data that contributed to two promotional campaigns — all while studying full-time.",side:"left"},
+  {year:"2022–2025",title:"Sales Associate @ IKEA",desc:"Built Power BI dashboards for store management and analysed sales data, all while studying full-time.",side:"left"},
   {year:"2022–2023",title:"Image Reviewer @ Transportstyrelsen",desc:"Reviewed and quality-assured visual material for road and traffic safety projects at the Swedish government agency.",side:"right"},
   {year:"Apr–Jun 2025",title:"Thesis: Nightingale Project, Germany",desc:"Built a full-stack AI platform at Johannes Gutenberg University classifying heart data using Python, Flask, Vue.js and real echocardiogram data.",side:"left"},
   {year:"Aug 2025",title:"Graduated",desc:"Graduated with BSc Computer Engineering from Örebro University. Built a Blinddate web app: React, Node.js/Express, Supabase — swipe-based discovery, real-time chat, two-sided photo reveal.",side:"right"},
-  {year:"2026 – Now",title:"CTO @ SoMe Startup",desc:"Leading feature development, delegating tasks across the team, and balancing speed of delivery with code quality.",side:"left"},
+  {year:"2026 – Now",title:"CTO at a Startup",desc:"Leading feature development, delegating tasks across the team, and balancing speed of delivery with code quality.",side:"left"},
   {year:"Future",title:"Full-Stack Engineer with ML/AI",desc:"Grow into creating tools that feel human, intuitive, and thoughtful — combining technology with real human impact.",side:"right",future:true}
 ];
 
