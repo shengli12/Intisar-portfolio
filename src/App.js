@@ -50,7 +50,7 @@ function useVisible(threshold=0.15){
     const o=new IntersectionObserver(([e])=>{if(e.isIntersecting)setV(true)},{threshold});
     if(ref.current)o.observe(ref.current);
     return()=>o.disconnect();
-  },[]);
+  },[threshold]);
   return[ref,v];
 }
 
