@@ -217,7 +217,7 @@ export default function Portfolio(){
       {/* CONTACT */}
       <section id="contact" style={{padding:"70px 6%",background:"linear-gradient(135deg,#0d2a3d 0%,#1a4060 100%)",textAlign:"center"}}>
         <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:38,color:"white",margin:"0 0 10px",letterSpacing:"-0.02em"}}>Let's connect</h2>
-        <p style={{color:"#7ac0e4",fontSize:16,margin:"0 0 38px",fontFamily:"'Lora',serif",fontStyle:"italic"}}>Open to roles in Gothenburg and Stockholm</p>
+        <p style={{color:"#7ac0e4",fontSize:16,margin:"0 0 38px",fontFamily:"'Lora',serif",fontStyle:"italic"}}>Hakuna Matata</p>
         <div style={{display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap"}}>
           <a href="mailto:ihirabe@gmail.com" style={{background:"#5eaad4",color:"white",borderRadius:100,padding:"13px 28px",textDecoration:"none",fontSize:14,fontWeight:600}}>ihirabe@gmail.com</a>
           <a href="https://www.linkedin.com/in/intisar-hirabe-bab223220/" target="_blank" rel="noopener noreferrer" style={{background:"transparent",color:"#7ac0e4",border:"1.5px solid #3a6a8a",borderRadius:100,padding:"13px 28px",textDecoration:"none",fontSize:14,fontWeight:600}}>LinkedIn</a>
