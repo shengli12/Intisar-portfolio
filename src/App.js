@@ -22,7 +22,7 @@ const cards = [
    body:"Computer Engineering graduate who worked in retail, traveled to China, completed an AI thesis in Germany, and now develops software at a startup. I seek meaning, take initiative, and grow through real experiences.",
    tag:"Explorer · Builder · Learner"},
   {id:"values",icon:"◈",title:"What Are My Values",short:"Curiosity · Honesty · Initiative",
-   body:"I value curiosity over comfort, taking initiative, being honest, and showing up every day. I care about building things that help people — clean interfaces, working AI models, or making customers feel heard.",
+   body:"I value curiosity over comfort, taking initiative, being honest, and showing up every day. I care about building things that help people clean interfaces, working AI models, or making customers feel heard.",
    tag:"Curiosity · Honesty · User Focus"},
   {id:"motivation",icon:"◉",title:"Motivations",short:"Growth · Meaning · Learning",
    body:"I'm motivated by growth becoming a better problem solver, teammate, and capable person. I love solving difficult problems and learning new things. I want my work to matter.",
@@ -32,14 +32,15 @@ const cards = [
    tag:"Engineer · Specialist · Builder"}
 ];
 
+
 const timeline = [
   {year:"2021–2025",title:"BSc Computer Engineering",desc:"Built strong foundations in programming, ML, databases, algorithms and backend systems at Örebro University.",side:"right"},
   {year:"2022–2025",title:"Sales Associate @ IKEA",desc:"Built Power BI dashboards for store management and analysed sales data, all while studying full-time.",side:"left"},
   {year:"2022–2023",title:"Image Reviewer @ Transportstyrelsen",desc:"Reviewed and quality-assured visual material for road and traffic safety projects at the Swedish government agency.",side:"right"},
   {year:"Apr–Jun 2025",title:"Thesis: Nightingale Project, Germany",desc:"Built a full-stack AI platform at Johannes Gutenberg University classifying heart data using Python, Flask, Vue.js and real echocardiogram data.",side:"left"},
-  {year:"Aug 2025",title:"Graduated",desc:"Graduated with BSc Computer Engineering from Örebro University. Built a Blinddate web app: React, Node.js/Express, Supabase — swipe-based discovery, real-time chat, two-sided photo reveal.",side:"right"},
+  {year:"Aug 2025",title:"Graduated",desc:"Graduated with BSc Computer Engineering from Örebro University. Built a Blinddate web app: React, Node.js/Express, Supabase swipe-based discovery, real-time chat, two-sided photo reveal.",side:"right"},
   {year:"2026 – Now",title:"CTO at a Startup",desc:"Leading feature development, delegating tasks across the team, and balancing speed of delivery with code quality.",side:"left"},
-  {year:"Future",title:"Full-Stack Engineer with ML/AI",desc:"Grow into creating tools that feel human, intuitive, and thoughtful — combining technology with real human impact.",side:"right",future:true}
+  {year:"Future",title:"Full-Stack Engineer with ML/AI",desc:"Grow into creating tools that feel human, intuitive, and thoughtful combining technology with real human impact.",side:"right",future:true}
 ];
 
 const projects = [
@@ -68,26 +69,24 @@ function Card({card,index}){
   const[ref,v]=useVisible();
   return(
     <div ref={ref} onClick={()=>setOpen(!open)} style={{
-      background:"white",borderRadius:16,padding:"26px 28px 22px",cursor:"pointer",
-      border:open?"2px solid #C8102E":"2px solid #FFE0E5",
-      boxShadow:open?"0 16px 48px rgba(200,16,46,0.15)":"0 2px 12px rgba(200,16,46,0.06)",
+      background:"white",borderRadius:20,padding:"28px 28px 24px",cursor:"pointer",
+      border:open?"1.5px solid #5eaad4":"1.5px solid #b8d8f0",
+      boxShadow:open?"0 12px 40px rgba(100,170,220,0.2)":"0 2px 12px rgba(100,170,220,0.08)",
       transition:"all 0.4s cubic-bezier(0.23,1,0.32,1)",
       opacity:v?1:0,transform:v?"translateY(0)":"translateY(28px)",
-      transitionDelay:`${index*80}ms`,
-      position:"relative",overflow:"hidden"
+      transitionDelay:`${index*80}ms`
     }}>
-      <div style={{position:"absolute",top:0,left:0,width:"100%",height:3,background:open?"linear-gradient(90deg,#C8102E,#8B0000)":"linear-gradient(90deg,#FFE0E5,#FFCDD2)",transition:"background 0.3s"}}/>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginTop:8}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start"}}>
         <div>
-          <span style={{fontSize:22,color:"#C8102E",display:"block",marginBottom:8}}>{card.icon}</span>
-          <h3 style={{margin:0,fontSize:18,fontWeight:700,color:"#1A0505",fontFamily:"'Playfair Display',Georgia,serif",letterSpacing:"-0.01em"}}>{card.title}</h3>
-          <p style={{margin:"6px 0 0",fontSize:12,color:"#C8102E",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase"}}>{card.short}</p>
+          <span style={{fontSize:22,color:"#5eaad4",display:"block",marginBottom:8}}>{card.icon}</span>
+          <h3 style={{margin:0,fontSize:18,fontWeight:700,color:"#0d2a3d",fontFamily:"'Playfair Display',Georgia,serif",letterSpacing:"-0.01em"}}>{card.title}</h3>
+          <p style={{margin:"6px 0 0",fontSize:12,color:"#7aaecb",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase"}}>{card.short}</p>
         </div>
-        <div style={{width:30,height:30,borderRadius:"50%",background:open?"#C8102E":"#FFF0F2",display:"flex",alignItems:"center",justifyContent:"center",color:open?"white":"#C8102E",fontSize:20,fontWeight:300,transform:open?"rotate(45deg)":"rotate(0deg)",transition:"all 0.3s ease",flexShrink:0,marginTop:2}}>+</div>
+        <div style={{width:30,height:30,borderRadius:"50%",background:"#e8f4fb",display:"flex",alignItems:"center",justifyContent:"center",color:"#5eaad4",fontSize:20,fontWeight:300,transform:open?"rotate(45deg)":"rotate(0deg)",transition:"transform 0.3s ease",flexShrink:0,marginTop:2}}>+</div>
       </div>
       <div style={{maxHeight:open?320:0,overflow:"hidden",transition:"max-height 0.5s cubic-bezier(0.23,1,0.32,1)"}}>
-        <p style={{margin:"16px 0 12px",fontSize:14.5,color:"#3A1520",lineHeight:1.8,fontFamily:"'Lora',Georgia,serif"}}>{card.body}</p>
-        <span style={{display:"inline-block",background:"#FFF0F2",borderRadius:100,padding:"5px 14px",fontSize:11,color:"#C8102E",fontWeight:600,letterSpacing:"0.04em"}}>{card.tag}</span>
+        <p style={{margin:"16px 0 12px",fontSize:14.5,color:"#2c5678",lineHeight:1.8,fontFamily:"'Lora',Georgia,serif"}}>{card.body}</p>
+        <span style={{display:"inline-block",background:"#e8f4fb",borderRadius:100,padding:"5px 14px",fontSize:11,color:"#3a89ba",fontWeight:600,letterSpacing:"0.04em"}}>{card.tag}</span>
       </div>
     </div>
   );
@@ -96,35 +95,33 @@ function Card({card,index}){
 function SkillPill({label,i}){
   const[ref,v]=useVisible();
   return(
-    <span ref={ref} style={{display:"inline-block",background:"rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.85)",borderRadius:100,padding:"7px 16px",fontSize:13,fontWeight:500,border:"1px solid rgba(255,255,255,0.15)",transition:`all 0.4s ease ${i*35}ms`,opacity:v?1:0,transform:v?"scale(1)":"scale(0.85)"}}>{label}</span>
+    <span ref={ref} style={{display:"inline-block",background:"#e8f4fb",color:"#1e6a9a",borderRadius:100,padding:"7px 16px",fontSize:13,fontWeight:500,border:"1px solid #b8d8f0",transition:`all 0.4s ease ${i*35}ms`,opacity:v?1:0,transform:v?"scale(1)":"scale(0.85)"}}>{label}</span>
   );
 }
 
 function TimelineItem({item,index}){
   const[ref,v]=useVisible();
   const isLeft=item.side==="left";
-  const cardStyle={background:"white",borderRadius:14,padding:"18px 22px",border:item.future?"1.5px dashed #FFB8C1":"1.5px solid #FFE0E5",boxShadow:"0 2px 12px rgba(200,16,46,0.06)"};
-  const yearColor=item.future?"#FFB8C1":"#C8102E";
   return(
     <div ref={ref} style={{display:"grid",gridTemplateColumns:"1fr 32px 1fr",gap:"0 16px",marginBottom:28,alignItems:"center",opacity:v?1:0,transform:v?"none":(isLeft?"translateX(24px)":"translateX(-24px)"),transition:`all 0.6s cubic-bezier(0.23,1,0.32,1) ${index*70}ms`}}>
       {isLeft?(
         <>
-          <div style={{...cardStyle,gridColumn:1,textAlign:"right"}}>
-            <p style={{margin:"0 0 3px",fontSize:10,fontWeight:700,color:yearColor,letterSpacing:"0.1em",textTransform:"uppercase"}}>{item.year}</p>
-            <h4 style={{margin:"0 0 5px",fontSize:14,fontWeight:700,color:"#1A0505",fontFamily:"'Playfair Display',serif"}}>{item.title}</h4>
-            <p style={{margin:0,fontSize:12.5,color:"#5A2030",lineHeight:1.6}}>{item.desc}</p>
+          <div style={{background:"white",borderRadius:14,padding:"16px 20px",border:item.future?"1.5px dashed #7ac0e4":"1.5px solid #b8d8f0",gridColumn:1,textAlign:"right"}}>
+            <p style={{margin:"0 0 3px",fontSize:10,fontWeight:700,color:item.future?"#5eaad4":"#3a89ba",letterSpacing:"0.1em",textTransform:"uppercase"}}>{item.year}</p>
+            <h4 style={{margin:"0 0 5px",fontSize:14,fontWeight:700,color:"#0d2a3d",fontFamily:"'Playfair Display',serif"}}>{item.title}</h4>
+            <p style={{margin:0,fontSize:12.5,color:"#4a7a9a",lineHeight:1.6}}>{item.desc}</p>
           </div>
-          <div style={{display:"flex",justifyContent:"center",gridColumn:2}}><div style={{width:14,height:14,borderRadius:"50%",background:item.future?"#FFB8C1":"#C8102E",border:"3px solid white",boxShadow:"0 0 0 2.5px "+(item.future?"#FFB8C1":"#C8102E")}}/></div>
+          <div style={{display:"flex",justifyContent:"center",gridColumn:2}}><div style={{width:12,height:12,borderRadius:"50%",background:item.future?"#7ac0e4":"#1e6a9a",border:"2.5px solid white",boxShadow:"0 0 0 2px "+(item.future?"#7ac0e4":"#1e6a9a")}}/></div>
           <div style={{gridColumn:3}}/>
         </>
       ):(
         <>
           <div style={{gridColumn:1}}/>
-          <div style={{display:"flex",justifyContent:"center",gridColumn:2}}><div style={{width:14,height:14,borderRadius:"50%",background:item.future?"#FFB8C1":"#C8102E",border:"3px solid white",boxShadow:"0 0 0 2.5px "+(item.future?"#FFB8C1":"#C8102E")}}/></div>
-          <div style={{...cardStyle,gridColumn:3}}>
-            <p style={{margin:"0 0 3px",fontSize:10,fontWeight:700,color:yearColor,letterSpacing:"0.1em",textTransform:"uppercase"}}>{item.year}</p>
-            <h4 style={{margin:"0 0 5px",fontSize:14,fontWeight:700,color:"#1A0505",fontFamily:"'Playfair Display',serif"}}>{item.title}</h4>
-            <p style={{margin:0,fontSize:12.5,color:"#5A2030",lineHeight:1.6}}>{item.desc}</p>
+          <div style={{display:"flex",justifyContent:"center",gridColumn:2}}><div style={{width:12,height:12,borderRadius:"50%",background:item.future?"#7ac0e4":"#1e6a9a",border:"2.5px solid white",boxShadow:"0 0 0 2px "+(item.future?"#7ac0e4":"#1e6a9a")}}/></div>
+          <div style={{background:"white",borderRadius:14,padding:"16px 20px",border:item.future?"1.5px dashed #7ac0e4":"1.5px solid #b8d8f0",gridColumn:3}}>
+            <p style={{margin:"0 0 3px",fontSize:10,fontWeight:700,color:item.future?"#5eaad4":"#3a89ba",letterSpacing:"0.1em",textTransform:"uppercase"}}>{item.year}</p>
+            <h4 style={{margin:"0 0 5px",fontSize:14,fontWeight:700,color:"#0d2a3d",fontFamily:"'Playfair Display',serif"}}>{item.title}</h4>
+            <p style={{margin:0,fontSize:12.5,color:"#4a7a9a",lineHeight:1.6}}>{item.desc}</p>
           </div>
         </>
       )}
@@ -135,15 +132,15 @@ function TimelineItem({item,index}){
 function ProjectCard({project,index}){
   const[ref,v]=useVisible();
   return(
-    <div ref={ref} style={{background:"white",borderRadius:20,overflow:"hidden",border:"1.5px solid #FFE0E5",boxShadow:"0 4px 24px rgba(200,16,46,0.08)",transition:`all 0.5s cubic-bezier(0.23,1,0.32,1) ${index*100}ms`,opacity:v?1:0,transform:v?"translateY(0)":"translateY(28px)"}}>
-      <div style={{height:6,background:"linear-gradient(90deg,#C8102E,#8B0000)"}}/>
+    <div ref={ref} style={{background:"white",borderRadius:20,overflow:"hidden",border:"1.5px solid #b8d8f0",boxShadow:"0 4px 24px rgba(100,170,220,0.1)",transition:`all 0.5s cubic-bezier(0.23,1,0.32,1) ${index*100}ms`,opacity:v?1:0,transform:v?"translateY(0)":"translateY(28px)"}}>
+      <div style={{height:5,background:"linear-gradient(90deg,#1e6a9a,#5eaad4)"}}/>
       <div style={{padding:"26px 28px 24px"}}>
-        <h3 style={{margin:"0 0 10px",fontSize:22,fontWeight:700,color:"#1A0505",fontFamily:"'Playfair Display',serif",letterSpacing:"-0.01em"}}>{project.title}</h3>
-        <p style={{margin:"0 0 18px",fontSize:14,color:"#3A1520",lineHeight:1.75,fontFamily:"'Lora',Georgia,serif"}}>{project.desc}</p>
-        <div style={{display:"flex",flexWrap:"wrap",gap:8,marginBottom:22}}>
-          {project.stack.map(s=><span key={s} style={{background:"#FFF0F2",color:"#C8102E",borderRadius:100,padding:"4px 14px",fontSize:11,fontWeight:600,letterSpacing:"0.04em"}}>{s}</span>)}
+        <h3 style={{margin:"0 0 10px",fontSize:20,fontWeight:700,color:"#0d2a3d",fontFamily:"'Playfair Display',serif",letterSpacing:"-0.01em"}}>{project.title}</h3>
+        <p style={{margin:"0 0 18px",fontSize:14,color:"#2c5678",lineHeight:1.75,fontFamily:"'Lora',Georgia,serif"}}>{project.desc}</p>
+        <div style={{display:"flex",flexWrap:"wrap",gap:8,marginBottom:20}}>
+          {project.stack.map(s=><span key={s} style={{background:"#e8f4fb",color:"#1e6a9a",borderRadius:100,padding:"4px 12px",fontSize:11,fontWeight:600,letterSpacing:"0.04em"}}>{s}</span>)}
         </div>
-        <a href={project.link} target="_blank" rel="noopener noreferrer" style={{display:"inline-flex",alignItems:"center",gap:6,background:"#C8102E",color:"white",borderRadius:100,padding:"10px 22px",textDecoration:"none",fontSize:12,fontWeight:600,letterSpacing:"0.04em",boxShadow:"0 4px 14px rgba(200,16,46,0.3)"}}>
+        <a href={project.link} target="_blank" rel="noopener noreferrer" style={{display:"inline-flex",alignItems:"center",gap:6,background:"#1e6a9a",color:"white",borderRadius:100,padding:"10px 22px",textDecoration:"none",fontSize:12,fontWeight:600,letterSpacing:"0.04em",boxShadow:"0 4px 14px rgba(30,106,154,0.25)"}}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           {project.label}
         </a>
@@ -159,56 +156,53 @@ export default function Portfolio(){
   const scrollTo=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
 
   return(
-    <div style={{fontFamily:"'DM Sans',system-ui,sans-serif",background:"white",minHeight:"100vh",color:"#1A0505"}}>
+    <div style={{fontFamily:"'DM Sans',system-ui,sans-serif",background:"linear-gradient(180deg,#deeef8 0%,#f0f8ff 25%,#f7fbff 55%,#fff 100%)",minHeight:"100vh",color:"#1a2e3d"}}>
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 
       {/* NAV */}
-      <nav style={{position:"sticky",top:0,zIndex:100,background:"rgba(255,255,255,0.94)",backdropFilter:"blur(18px)",borderBottom:"1px solid #FFE0E5",padding:"0 6%",display:"flex",alignItems:"center",justifyContent:"space-between",height:58}}>
-        <span style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:22,color:"#C8102E",letterSpacing:"-0.02em"}}>IH</span>
+      <nav style={{position:"sticky",top:0,zIndex:100,background:"rgba(214,234,248,0.88)",backdropFilter:"blur(18px)",borderBottom:"1px solid rgba(100,170,220,0.18)",padding:"0 6%",display:"flex",alignItems:"center",justifyContent:"space-between",height:56}}>
+        <span style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:20,color:"#0d2a3d",letterSpacing:"-0.02em"}}>IH</span>
         <div style={{display:"flex",gap:28}}>
           {["About","Skills","Projects","Journey","Contact"].map(s=>(
-            <button key={s} onClick={()=>scrollTo(s.toLowerCase())} style={{background:"none",border:"none",cursor:"pointer",fontSize:12,fontWeight:600,color:"#5A2030",letterSpacing:"0.06em",textTransform:"uppercase"}}>{s}</button>
+            <button key={s} onClick={()=>scrollTo(s.toLowerCase())} style={{background:"none",border:"none",cursor:"pointer",fontSize:12,fontWeight:600,color:"#3a7aaa",letterSpacing:"0.06em",textTransform:"uppercase"}}>{s}</button>
           ))}
         </div>
-        <a href="/Intisar_Hirabe_CV_2026.docx.pdf" download style={{display:"flex",alignItems:"center",gap:7,background:"#C8102E",borderRadius:100,padding:"8px 18px",textDecoration:"none",color:"white",fontSize:12,fontWeight:600,letterSpacing:"0.04em",boxShadow:"0 4px 14px rgba(200,16,46,0.3)"}}>
+        <a href="/Intisar_Hirabe_CV_2026.docx.pdf" download style={{display:"flex",alignItems:"center",gap:7,background:"#1e6a9a",borderRadius:100,padding:"7px 16px",textDecoration:"none",color:"white",fontSize:12,fontWeight:600,letterSpacing:"0.04em"}}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           CV
         </a>
       </nav>
 
       {/* HERO */}
-      <section id="about" style={{background:"linear-gradient(135deg,#0D0D0D 0%,#1A0505 55%,#2D0A14 100%)",padding:"90px 6% 80px",position:"relative",overflow:"hidden"}}>
-        <div style={{position:"absolute",top:-120,right:-120,width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(200,16,46,0.18) 0%,transparent 70%)",pointerEvents:"none"}}/>
-        <div style={{position:"absolute",bottom:-60,left:-60,width:350,height:350,borderRadius:"50%",background:"radial-gradient(circle,rgba(200,16,46,0.1) 0%,transparent 70%)",pointerEvents:"none"}}/>
-        <div style={{maxWidth:1080,margin:"0 auto",display:"grid",gridTemplateColumns:"minmax(0,360px) minmax(0,1fr)",gap:"64px",alignItems:"center",position:"relative",zIndex:1}}>
-          <div style={{opacity:hdrV?1:0,transform:hdrV?"translateX(0)":"translateX(-36px)",transition:"all 0.9s cubic-bezier(0.23,1,0.32,1)"}}>
-            <div style={{position:"relative"}}>
-              <div style={{position:"absolute",inset:-4,background:"linear-gradient(145deg,#C8102E,#8B0000,#FF4060)",borderRadius:30,zIndex:0}}/>
-              <div style={{position:"relative",zIndex:1,borderRadius:26,overflow:"hidden",aspectRatio:"3/4",border:"4px solid #1A0505"}}>
-                <img src={PHOTO_URL} alt="Intisar Hirabe" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top"}}/>
-              </div>
-              <div style={{position:"absolute",bottom:-16,right:-16,zIndex:10,background:"#C8102E",color:"white",borderRadius:100,padding:"8px 18px",fontSize:11,fontWeight:700,letterSpacing:"0.05em",boxShadow:"0 6px 24px rgba(200,16,46,0.5)"}}>Open to Work</div>
+      <section id="about" style={{padding:"80px 6% 70px",maxWidth:1080,margin:"0 auto"}}>
+        <div style={{display:"grid",gridTemplateColumns:"minmax(0,380px) minmax(0,1fr)",gap:"64px",alignItems:"center"}}>
+          {/* Photo */}
+          <div style={{position:"relative",opacity:hdrV?1:0,transform:hdrV?"translateX(0)":"translateX(-36px)",transition:"all 0.9s cubic-bezier(0.23,1,0.32,1)"}}>
+            <div style={{position:"absolute",inset:-14,background:"linear-gradient(145deg,#a4d0ee,#c6e6f6,#deeef8)",borderRadius:32,zIndex:0}}/>
+            <div style={{position:"absolute",inset:-4,background:"white",borderRadius:26,zIndex:1}}/>
+            <div style={{position:"relative",zIndex:2,borderRadius:22,overflow:"hidden",aspectRatio:"3/4"}}>
+              <img src={PHOTO_URL} alt="Intisar Hirabe" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top"}}/>
             </div>
+            <div style={{position:"absolute",bottom:-14,right:-14,zIndex:10,background:"#1e6a9a",color:"white",borderRadius:100,padding:"7px 16px",fontSize:11,fontWeight:700,letterSpacing:"0.05em",boxShadow:"0 4px 18px rgba(30,106,154,0.32)"}}>Open to Work</div>
           </div>
+
+          {/* Text */}
           <div style={{opacity:hdrV?1:0,transform:hdrV?"translateY(0)":"translateY(36px)",transition:"all 0.9s cubic-bezier(0.23,1,0.32,1) 0.2s"}}>
-            <p style={{margin:"0 0 8px",fontSize:11,fontWeight:700,color:"#C8102E",letterSpacing:"0.18em",textTransform:"uppercase"}}>BSc Computer Engineering</p>
-            <div style={{margin:"0 0 26px"}}>
-              <h1 style={{margin:0,fontSize:"clamp(52px,6.5vw,80px)",fontFamily:"'Playfair Display',serif",fontWeight:800,color:"white",lineHeight:0.92,letterSpacing:"-0.03em"}}>Intisar</h1>
-              <h1 style={{margin:0,fontSize:"clamp(52px,6.5vw,80px)",fontFamily:"'Playfair Display',serif",fontWeight:800,color:"#C8102E",lineHeight:0.92,letterSpacing:"-0.03em"}}>Hirabe</h1>
-            </div>
-            <p style={{margin:"0 0 34px",fontSize:16,color:"rgba(255,255,255,0.72)",lineHeight:1.85,fontFamily:"'Lora',Georgia,serif",fontStyle:"italic",borderLeft:"3px solid #C8102E",paddingLeft:20}}>
+            <p style={{margin:"0 0 6px",fontSize:12,fontWeight:700,color:"#5eaad4",letterSpacing:"0.14em",textTransform:"uppercase"}}>BSc Computer Engineering</p>
+            <h1 style={{margin:"0 0 18px",fontSize:"clamp(38px,5vw,60px)",fontFamily:"'Playfair Display',serif",fontWeight:800,color:"#0d2a3d",lineHeight:1.05,letterSpacing:"-0.025em"}}>Intisar<br/>Hirabe</h1>
+            <p style={{margin:"0 0 30px",fontSize:16,color:"#2c5678",lineHeight:1.8,fontFamily:"'Lora',Georgia,serif",fontStyle:"italic",borderLeft:"3px solid #7ac0e4",paddingLeft:18}}>
               I document my tech journey here – where curiosity meets habit. I build, I customize, I show up every day. Growth isn't just a goal, it's my system.
             </p>
             <div style={{display:"flex",gap:12,flexWrap:"wrap"}}>
-              <a href="https://www.linkedin.com/in/intisar-hirabe-bab223220/" target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",gap:7,background:"#C8102E",color:"white",borderRadius:100,padding:"12px 24px",textDecoration:"none",fontSize:13,fontWeight:600,boxShadow:"0 6px 24px rgba(200,16,46,0.4)"}}>
+              <a href="https://www.linkedin.com/in/intisar-hirabe-bab223220/" target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",gap:7,background:"#1e6a9a",color:"white",borderRadius:100,padding:"11px 22px",textDecoration:"none",fontSize:13,fontWeight:600,boxShadow:"0 4px 18px rgba(30,106,154,0.25)"}}>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 LinkedIn
               </a>
-              <a href="https://github.com/shengli12?tab=repositories" target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",gap:7,background:"rgba(255,255,255,0.07)",color:"rgba(255,255,255,0.9)",borderRadius:100,padding:"12px 24px",textDecoration:"none",fontSize:13,fontWeight:600,border:"1.5px solid rgba(255,255,255,0.18)"}}>
+              <a href="https://github.com/shengli12?tab=repositories" target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",gap:7,background:"white",color:"#1e6a9a",borderRadius:100,padding:"11px 22px",textDecoration:"none",fontSize:13,fontWeight:600,border:"1.5px solid #b8d8f0"}}>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 GitHub
               </a>
-              <a href="mailto:ihirabe@gmail.com" style={{display:"flex",alignItems:"center",gap:7,background:"rgba(255,255,255,0.07)",color:"rgba(255,255,255,0.9)",borderRadius:100,padding:"12px 24px",textDecoration:"none",fontSize:13,fontWeight:600,border:"1.5px solid rgba(255,255,255,0.18)"}}>
+              <a href="mailto:ihirabe@gmail.com" style={{display:"flex",alignItems:"center",gap:7,background:"white",color:"#1e6a9a",borderRadius:100,padding:"11px 22px",textDecoration:"none",fontSize:13,fontWeight:600,border:"1.5px solid #b8d8f0"}}>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 Email
               </a>
@@ -217,88 +211,93 @@ export default function Portfolio(){
         </div>
       </section>
 
-      {/* ABOUT CARDS */}
-      <section style={{padding:"70px 6%",maxWidth:1080,margin:"0 auto"}}>
-        <p style={{margin:"0 0 4px",fontSize:11,fontWeight:700,color:"#C8102E",letterSpacing:"0.16em",textTransform:"uppercase"}}>About me</p>
-        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:36,color:"#1A0505",margin:"0 0 36px",letterSpacing:"-0.02em"}}>Get to know me</h2>
+      {/* CARDS */}
+      <section style={{padding:"50px 6%",maxWidth:1080,margin:"0 auto"}}>
+        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:32,color:"#0d2a3d",margin:"0 0 6px",letterSpacing:"-0.02em"}}>Get to know me</h2>
+        <p style={{color:"#7ac0e4",fontSize:13,margin:"0 0 36px",fontWeight:500}}>Tap each card to expand</p>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(230px,1fr))",gap:18}}>
           {cards.map((card,i)=><Card key={card.id} card={card} index={i}/>)}
         </div>
       </section>
 
-      {/* SKILLS */}
-      <section id="skills" style={{background:"#0D0D0D",padding:"70px 6%"}}>
-        <div style={{maxWidth:1080,margin:"0 auto"}}>
-          <p style={{margin:"0 0 4px",fontSize:11,fontWeight:700,color:"#C8102E",letterSpacing:"0.16em",textTransform:"uppercase"}}>What I bring</p>
-          <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:36,color:"white",margin:"0 0 32px",letterSpacing:"-0.02em"}}>Skills & Strengths</h2>
-          <div style={{display:"flex",gap:10,marginBottom:28,flexWrap:"wrap"}}>
-            {Object.keys(skills).map(cat=>(
-              <button key={cat} onClick={()=>setActiveSkill(cat)} style={{background:activeSkill===cat?"#C8102E":"transparent",color:activeSkill===cat?"white":"rgba(255,255,255,0.55)",border:"1.5px solid "+(activeSkill===cat?"#C8102E":"rgba(255,255,255,0.12)"),borderRadius:100,padding:"9px 20px",fontSize:12,fontWeight:600,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.02em"}}>{cat}</button>
-            ))}
+
+      {/* CHINA */}
+      <section style={{padding:"60px 6%",maxWidth:1080,margin:"0 auto"}}>
+        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:32,color:"#0d2a3d",margin:"0 0 4px",letterSpacing:"-0.02em"}}>Six Months in China</h2>
+        <p style={{color:"#7ac0e4",fontSize:13,margin:"0 0 36px",fontWeight:500}}>Adaptability is a skill you earn, not inherit.</p>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:20,marginBottom:40}}>
+          <div style={{position:"relative",borderRadius:20,overflow:"hidden",aspectRatio:"3/4",boxShadow:"0 12px 40px rgba(100,170,220,0.18)"}}>
+            <img src="/photo-mountain.jpg" alt="Yangshuo, Guangxi" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+            <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(13,42,61,0.75) 0%,transparent 55%)"}}/>
+            <div style={{position:"absolute",bottom:24,left:24,color:"white"}}>
+              <p style={{margin:0,fontSize:11,fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",color:"#7ac0e4"}}>Guangxi, China</p>
+              <p style={{margin:"4px 0 0",fontSize:17,fontWeight:700,fontFamily:"'Playfair Display',serif"}}>Yangshuo</p>
+            </div>
           </div>
-          <div style={{display:"flex",flexWrap:"wrap",gap:10}}>
-            {skills[activeSkill].map((s,i)=><SkillPill key={s} label={s} i={i}/>)}
+          <div style={{position:"relative",borderRadius:20,overflow:"hidden",aspectRatio:"3/4",boxShadow:"0 12px 40px rgba(100,170,220,0.18)"}}>
+            <img src="/photo-city.jpg" alt="Victoria Peak, Hong Kong" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top"}}/>
+            <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(13,42,61,0.75) 0%,transparent 55%)"}}/>
+            <div style={{position:"absolute",bottom:24,left:24,color:"white"}}>
+              <p style={{margin:0,fontSize:11,fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",color:"#7ac0e4"}}>Hong Kong</p>
+              <p style={{margin:"4px 0 0",fontSize:17,fontWeight:700,fontFamily:"'Playfair Display',serif"}}>Victoria Peak</p>
+            </div>
+          </div>
+        </div>
+        <div style={{display:"grid",gridTemplateColumns:"minmax(0,1fr) minmax(0,380px)",gap:40,alignItems:"start"}}>
+          <p style={{margin:0,fontSize:15,color:"#2c5678",lineHeight:1.9,fontFamily:"'Lora',Georgia,serif"}}>
+            I spent six months living and working in China — a decision that rewired how I think. I studied Mandarin, absorbed a culture where discipline and collective drive are not motivational slogans but daily practice. I arrived curious and left with a thicker skin, a sharper mindset, and firsthand proof that throwing yourself into the unfamiliar is the fastest path to growth. China did not just show me a different world — it showed me a different version of myself.
+          </p>
+          <div style={{background:"linear-gradient(135deg,#deeef8,#f0f8ff)",borderRadius:20,padding:"28px 32px",borderLeft:"4px solid #1e6a9a"}}>
+            <p style={{margin:"0 0 10px",fontSize:28,fontWeight:700,color:"#0d2a3d",fontFamily:"'Playfair Display',serif",lineHeight:1.2}}>天道酬勤</p>
+            <p style={{margin:"0 0 6px",fontSize:12,color:"#5eaad4",fontWeight:600,letterSpacing:"0.08em"}}>Tiān dào chóu qín</p>
+            <p style={{margin:0,fontSize:13.5,color:"#2c5678",fontFamily:"'Lora',serif",fontStyle:"italic",lineHeight:1.7}}>"Heaven rewards those who persevere."</p>
           </div>
         </div>
       </section>
 
-      {/* TRAVEL PHOTOS */}
-      <section style={{padding:"70px 6%",maxWidth:1080,margin:"0 auto"}}>
-        <p style={{margin:"0 0 4px",fontSize:11,fontWeight:700,color:"#C8102E",letterSpacing:"0.16em",textTransform:"uppercase"}}>Life in motion</p>
-        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:36,color:"#1A0505",margin:"0 0 36px",letterSpacing:"-0.02em"}}>Beyond the Code</h2>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:20}}>
-          <div style={{position:"relative",borderRadius:20,overflow:"hidden",aspectRatio:"3/4",boxShadow:"0 20px 60px rgba(200,16,46,0.15)"}}>
-            <img src="/photo-mountain.jpg" alt="Tianmen Mountain, China" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"}}/>
-            <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(13,0,5,0.75) 0%,transparent 55%)"}}/>
-            <div style={{position:"absolute",bottom:28,left:28,color:"white"}}>
-              <p style={{margin:0,fontSize:11,fontWeight:700,letterSpacing:"0.14em",textTransform:"uppercase",color:"#FFB8C1"}}>China</p>
-              <p style={{margin:"5px 0 0",fontSize:18,fontWeight:700,fontFamily:"'Playfair Display',serif",lineHeight:1.2}}>Tianmen Mountain</p>
-            </div>
-          </div>
-          <div style={{position:"relative",borderRadius:20,overflow:"hidden",aspectRatio:"3/4",boxShadow:"0 20px 60px rgba(200,16,46,0.15)"}}>
-            <img src="/photo-city.jpg" alt="Victoria Peak, Hong Kong" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top"}}/>
-            <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(13,0,5,0.75) 0%,transparent 55%)"}}/>
-            <div style={{position:"absolute",bottom:28,left:28,color:"white"}}>
-              <p style={{margin:0,fontSize:11,fontWeight:700,letterSpacing:"0.14em",textTransform:"uppercase",color:"#FFB8C1"}}>Hong Kong</p>
-              <p style={{margin:"5px 0 0",fontSize:18,fontWeight:700,fontFamily:"'Playfair Display',serif",lineHeight:1.2}}>Victoria Peak</p>
-            </div>
-          </div>
+      {/* SKILLS */}
+      <section id="skills" style={{padding:"50px 6%",maxWidth:1080,margin:"0 auto"}}>
+        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:32,color:"#0d2a3d",margin:"0 0 4px",letterSpacing:"-0.02em"}}>Skills & Strengths</h2>
+        <p style={{color:"#7ac0e4",fontSize:13,margin:"0 0 32px",fontWeight:500}}>A mix of solid engineering skills, AI experience and people-focused strengths.</p>
+        <div style={{display:"flex",gap:10,marginBottom:24,flexWrap:"wrap"}}>
+          {Object.keys(skills).map(cat=>(
+            <button key={cat} onClick={()=>setActiveSkill(cat)} style={{background:activeSkill===cat?"#1e6a9a":"white",color:activeSkill===cat?"white":"#3a7aaa",border:"1.5px solid "+(activeSkill===cat?"#1e6a9a":"#b8d8f0"),borderRadius:100,padding:"8px 18px",fontSize:12,fontWeight:600,cursor:"pointer",transition:"all 0.2s"}}>{cat}</button>
+          ))}
+        </div>
+        <div style={{display:"flex",flexWrap:"wrap",gap:10}}>
+          {skills[activeSkill].map((s,i)=><SkillPill key={s} label={s} i={i}/>)}
         </div>
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" style={{background:"#FFF5F6",padding:"70px 6%"}}>
-        <div style={{maxWidth:1080,margin:"0 auto"}}>
-          <p style={{margin:"0 0 4px",fontSize:11,fontWeight:700,color:"#C8102E",letterSpacing:"0.16em",textTransform:"uppercase"}}>What I've built</p>
-          <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:36,color:"#1A0505",margin:"0 0 36px",letterSpacing:"-0.02em"}}>Projects</h2>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:24}}>
-            {projects.map((p,i)=><ProjectCard key={p.title} project={p} index={i}/>)}
-          </div>
+      <section id="projects" style={{padding:"50px 6%",maxWidth:1080,margin:"0 auto"}}>
+        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:32,color:"#0d2a3d",margin:"0 0 4px",letterSpacing:"-0.02em"}}>Projects</h2>
+        <p style={{color:"#7ac0e4",fontSize:13,margin:"0 0 36px",fontWeight:500}}>Things I have built to sharpen my skills.</p>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:24}}>
+          {projects.map((p,i)=><ProjectCard key={p.title} project={p} index={i}/>)}
         </div>
       </section>
 
       {/* TIMELINE */}
-      <section id="journey" style={{padding:"70px 6% 90px",maxWidth:1080,margin:"0 auto"}}>
-        <p style={{margin:"0 0 4px",fontSize:11,fontWeight:700,color:"#C8102E",letterSpacing:"0.16em",textTransform:"uppercase"}}>Where I've been</p>
-        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:36,color:"#1A0505",margin:"0 0 48px",letterSpacing:"-0.02em"}}>My Journey</h2>
+      <section id="journey" style={{padding:"50px 6% 80px",maxWidth:1080,margin:"0 auto"}}>
+        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:32,color:"#0d2a3d",margin:"0 0 4px",letterSpacing:"-0.02em"}}>My Journey</h2>
+        <p style={{color:"#7ac0e4",fontSize:13,margin:"0 0 48px",fontWeight:500}}>A timeline of how I'm growing as an engineer.</p>
         <div style={{position:"relative"}}>
-          <div style={{position:"absolute",left:"50%",top:0,bottom:0,width:2,background:"linear-gradient(180deg,#C8102E 0%,#FFB8C1 100%)",transform:"translateX(-50%)"}}/>
+          <div style={{position:"absolute",left:"50%",top:0,bottom:0,width:2,background:"linear-gradient(180deg,#5eaad4,#c8e8f8)",transform:"translateX(-50%)"}}/>
           {timeline.map((item,i)=><TimelineItem key={i} item={item} index={i}/>)}
         </div>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" style={{padding:"100px 6%",background:"linear-gradient(135deg,#0D0D0D 0%,#1A0505 55%,#2D0A14 100%)",textAlign:"center",position:"relative",overflow:"hidden"}}>
-        <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:700,height:700,borderRadius:"50%",background:"radial-gradient(circle,rgba(200,16,46,0.13) 0%,transparent 70%)",pointerEvents:"none"}}/>
-        <p style={{margin:"0 0 6px",fontSize:11,fontWeight:700,color:"#C8102E",letterSpacing:"0.16em",textTransform:"uppercase",position:"relative"}}>Get in touch</p>
-        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:52,color:"white",margin:"0 0 12px",letterSpacing:"-0.025em",position:"relative"}}>Let's connect</h2>
-        <p style={{color:"rgba(255,255,255,0.45)",fontSize:16,margin:"0 0 44px",fontFamily:"'Lora',serif",fontStyle:"italic",position:"relative"}}>Hakuna Matata</p>
-        <div style={{display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap",position:"relative"}}>
-          <a href="mailto:ihirabe@gmail.com" style={{background:"#C8102E",color:"white",borderRadius:100,padding:"14px 32px",textDecoration:"none",fontSize:14,fontWeight:600,boxShadow:"0 8px 28px rgba(200,16,46,0.45)"}}>ihirabe@gmail.com</a>
-          <a href="https://www.linkedin.com/in/intisar-hirabe-bab223220/" target="_blank" rel="noopener noreferrer" style={{background:"transparent",color:"rgba(255,255,255,0.75)",border:"1.5px solid rgba(255,255,255,0.15)",borderRadius:100,padding:"14px 32px",textDecoration:"none",fontSize:14,fontWeight:600}}>LinkedIn</a>
-          <a href="https://github.com/shengli12?tab=repositories" target="_blank" rel="noopener noreferrer" style={{background:"transparent",color:"rgba(255,255,255,0.75)",border:"1.5px solid rgba(255,255,255,0.15)",borderRadius:100,padding:"14px 32px",textDecoration:"none",fontSize:14,fontWeight:600}}>GitHub</a>
+      <section id="contact" style={{padding:"70px 6%",background:"linear-gradient(135deg,#0d2a3d 0%,#1a4060 100%)",textAlign:"center"}}>
+        <h2 style={{fontFamily:"'Playfair Display',serif",fontWeight:800,fontSize:38,color:"white",margin:"0 0 10px",letterSpacing:"-0.02em"}}>Let's connect</h2>
+        <p style={{color:"#7ac0e4",fontSize:16,margin:"0 0 38px",fontFamily:"'Lora',serif",fontStyle:"italic"}}>Hakuna Matata</p>
+        <div style={{display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap"}}>
+          <a href="mailto:ihirabe@gmail.com" style={{background:"#5eaad4",color:"white",borderRadius:100,padding:"13px 28px",textDecoration:"none",fontSize:14,fontWeight:600}}>ihirabe@gmail.com</a>
+          <a href="https://www.linkedin.com/in/intisar-hirabe-bab223220/" target="_blank" rel="noopener noreferrer" style={{background:"transparent",color:"#7ac0e4",border:"1.5px solid #3a6a8a",borderRadius:100,padding:"13px 28px",textDecoration:"none",fontSize:14,fontWeight:600}}>LinkedIn</a>
+          <a href="https://github.com/shengli12?tab=repositories" target="_blank" rel="noopener noreferrer" style={{background:"transparent",color:"#7ac0e4",border:"1.5px solid #3a6a8a",borderRadius:100,padding:"13px 28px",textDecoration:"none",fontSize:14,fontWeight:600}}>GitHub</a>
         </div>
-        <p style={{marginTop:60,color:"rgba(255,255,255,0.15)",fontSize:11,letterSpacing:"0.14em",position:"relative"}}>© 2026 INTISAR HIRABE</p>
+        <p style={{marginTop:48,color:"#2a5a7a",fontSize:11,letterSpacing:"0.1em"}}>© 2026 INTISAR HIRABE</p>
       </section>
     </div>
   );
